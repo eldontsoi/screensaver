@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    #time{
+        padding-top:340px;
+        text-align: center;
+        justify-content: center;
+        font-size: 1500%;
+        font-family:digital-7 Mono;
+        background-color: black;
+        color:#32cd32;
+        padding-right: 50px;
+
+    }
+</style>
+<body>
+
+<div id='time'>
+
+</div>
+
+
+<script type="text/javascript">
+    (function () {
+    function checkTime(i) {
+        return (i < 10) ? "0" + i : i;
+    }
+
+    function startTime() {
+        var today = new Date(),
+            h = checkTime(today.getHours()),
+            m = checkTime(today.getMinutes()),
+            s = checkTime(today.getSeconds());
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        t = setTimeout(function () {
+            startTime()
+        }, 500);
+    }
+    startTime();
+})();
+</script>
+</body>
+</html>
